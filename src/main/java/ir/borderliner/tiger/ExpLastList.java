@@ -4,11 +4,11 @@
 
 package ir.borderliner.tiger;
 
-public class LastExpList extends ExpList {
+public class ExpLastList extends ExpList {
 
     public Exp head;
 
-    public LastExpList(Exp h) {
+    public ExpLastList(Exp h) {
         head = h;
     }
 

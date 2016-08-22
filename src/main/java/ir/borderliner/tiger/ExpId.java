@@ -3,11 +3,11 @@ package ir.borderliner.tiger;
 /**
  * Created by borderliner on 8/22/16.
  */
-public class IdExp implements Exp {
+public class ExpId implements Exp {
 
     public String id;
 
-    public IdExp(String i) {
+    public ExpId(String i) {
         id = i;
     }
 

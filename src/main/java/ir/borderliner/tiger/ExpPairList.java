@@ -4,12 +4,12 @@
 
 package ir.borderliner.tiger;
 
-public class PairExpList extends ExpList {
+public class ExpPairList extends ExpList {
 
     public Exp head;
     public ExpList tail;
 
-    public PairExpList(Exp h, ExpList t) {
+    public ExpPairList(Exp h, ExpList t) {
         head = h;
         tail = t;
     }

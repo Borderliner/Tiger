@@ -4,12 +4,12 @@
 
 package ir.borderliner.tiger;
 
-public class AssignStm implements Stm {
+public class StmAssign implements Stm {
 
     public String id;
     public Exp exp;
 
-    public AssignStm(String i, Exp e) {
+    public StmAssign(String i, Exp e) {
         id = i;
         exp = e;
     }

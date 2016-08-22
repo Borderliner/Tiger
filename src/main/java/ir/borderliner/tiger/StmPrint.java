@@ -4,11 +4,11 @@
 
 package ir.borderliner.tiger;
 
-public class PrintStm implements Stm {
+public class StmPrint implements Stm {
 
     public ExpList exps;
 
-    public PrintStm(ExpList e) {
+    public StmPrint(ExpList e) {
         exps = e;
     }
 
@@ -18,15 +18,15 @@ public class PrintStm implements Stm {
     }
 
     private Table interpPrint(ExpList exps, Table t) {
-        if (exps instanceof LastExpList) {
-            IntAndTable expVal = ((LastExpList) exps).head.eval(t);
+        if (exps instanceof ExpLastList) {
+            IntAndTable expVal = ((ExpLastList) exps).head.eval(t);
             System.out.print(expVal.i);
             return expVal.t;
         } else {
-            PairExpList pairExpList = (PairExpList) exps;
-            IntAndTable expVal = pairExpList.head.eval(t);
+            ExpPairList expPairList = (ExpPairList) exps;
+            IntAndTable expVal = expPairList.head.eval(t);
             System.out.print(expVal.i);
-            return interpPrint(pairExpList.tail, expVal.t);
+            return interpPrint(expPairList.tail, expVal.t);
         }
     }
 }

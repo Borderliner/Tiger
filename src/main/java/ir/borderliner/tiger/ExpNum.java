@@ -4,11 +4,11 @@
 
 package ir.borderliner.tiger;
 
-public class NumExp implements Exp {
+public class ExpNum implements Exp {
 
     public int num;
 
-    public NumExp(int n) {
+    public ExpNum(int n) {
         num = n;
     }
 

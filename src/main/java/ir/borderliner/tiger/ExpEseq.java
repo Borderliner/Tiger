@@ -4,12 +4,12 @@
 
 package ir.borderliner.tiger;
 
-public class EseqExp implements Exp {
+public class ExpEseq implements Exp {
 
     public Stm stm;
     public Exp exp;
 
-    public EseqExp(Stm s, Exp e) {
+    public ExpEseq(Stm s, Exp e) {
         stm = s;
         exp = e;
     }
