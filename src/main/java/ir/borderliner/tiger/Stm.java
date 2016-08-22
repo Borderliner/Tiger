@@ -4,5 +4,7 @@
 
 package ir.borderliner.tiger;
 
-public abstract class Stm {}
+public interface Stm {
+    Table eval(Table t);
+}
 

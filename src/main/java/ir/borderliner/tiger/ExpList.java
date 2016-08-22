@@ -4,4 +4,4 @@
 
 package ir.borderliner.tiger;
 
-public abstract class ExpList {}
+public class ExpList {}

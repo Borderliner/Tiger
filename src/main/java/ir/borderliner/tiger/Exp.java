@@ -4,4 +4,6 @@
 
 package ir.borderliner.tiger;
 
-public abstract class Exp {}
+public interface Exp {
+    IntAndTable eval(Table t);
+}

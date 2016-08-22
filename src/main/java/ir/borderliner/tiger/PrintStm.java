@@ -1,9 +1,10 @@
-package ir.borderliner.tiger;
-
 /**
  * Created by borderliner on 8/22/16.
  */
-public class PrintStm extends Stm {
+
+package ir.borderliner.tiger;
+
+public class PrintStm implements Stm {
 
     public ExpList exps;
 
@@ -11,4 +12,21 @@ public class PrintStm extends Stm {
         exps = e;
     }
 
+    @Override
+    public Table eval(Table t) {
+        return interpPrint(exps, t);
+    }
+
+    private Table interpPrint(ExpList exps, Table t) {
+        if (exps instanceof LastExpList) {
+            IntAndTable expVal = ((LastExpList) exps).head.eval(t);
+            System.out.print(expVal.i);
+            return expVal.t;
+        } else {
+            PairExpList pairExpList = (PairExpList) exps;
+            IntAndTable expVal = pairExpList.head.eval(t);
+            System.out.print(expVal.i);
+            return interpPrint(pairExpList.tail, expVal.t);
+        }
+    }
 }

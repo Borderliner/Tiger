@@ -4,7 +4,7 @@
 
 package ir.borderliner.tiger;
 
-public class AssignStm extends Stm {
+public class AssignStm implements Stm {
 
     public String id;
     public Exp exp;
@@ -12,6 +12,11 @@ public class AssignStm extends Stm {
     public AssignStm(String i, Exp e) {
         id = i;
         exp = e;
+    }
+
+    @Override public Table eval(Table t) {
+        IntAndTable expVal = exp.eval(t);
+        return new Table(id, expVal.i, expVal.t);
     }
 
 }
